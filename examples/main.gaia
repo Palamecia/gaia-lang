@@ -1,0 +1,58 @@
+fn test(lst: [[isize]]) {
+    loop1: for i in 0..lst.size() {
+        for j in 0..lst[i].size() {
+            if lst[i][j] == 0 {
+                continue loop1;
+            }
+        }
+    }
+    let var : [isize]? = for i in 0..5 {
+        if lst[i].size() > 0 {
+            break lst[i];
+        }
+    }
+}
+
+fn sqrt(val: f64) -> f64 {
+    return val * val;
+}
+
+fn main() {
+    let var = sqrt(5.2);
+    let arr : [[isize; 5]; 5] = [
+        [0, 1, 2, 3, 4],
+        [5, 6, 7, 8, 9],
+        [10, 11, 12, 13, 14],
+        [15, 16, 17, 18, 19],
+        [20, 21, 22, 23, 24]
+    ];
+    test(arr);
+
+    // comment
+    for let mut i = 0; i < 10; ++i {
+        let mut j = 0;
+        while j < 10 {
+            ++j;
+        }
+    }
+
+    switch 5 {
+    case 1 | 2 | 3:
+        doNothing();
+    case 4:
+        doAThing();
+        break;
+        doNoDoThis();
+    case 5:
+        doFirstStep();
+        continue;
+    case 6:
+        doSecondStep();
+    default:
+        error();
+    }
+
+    {
+        let scoped = 1;
+    } // Out of scope
+}
