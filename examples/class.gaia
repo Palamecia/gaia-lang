@@ -1,0 +1,103 @@
+class Parallelogram {
+
+    // Properties of class
+    base: Float64;
+    height: Float64;
+
+    // Initializer
+    pub init(mut self, base: Float64, height: Float64) {
+        self.base = base;
+        self.height = height;
+    }
+
+    pub deinit(self) {}
+
+    // Method to calculate the area of the Parallelogram
+    pub fn calculateParallelogramArea(self) -> Float64 {
+        return base * height;
+    }
+}
+
+class Meters {
+    value: Float64;
+
+    pub implicit init(mut self, value: Float64) {
+        self.value = value;
+    }
+
+    pub fn implicit(self) -> Float64 {
+        return self.value;
+    }
+}
+
+virtual class Base {
+    virtual fn method(self) {}
+}
+
+class Impl : pub Base {
+    override fn method(self) {}
+}
+
+class List<T> {
+    data: [*]T;
+    size: Size;
+    capacity: Size;
+
+    pub init(self) {}
+    pub init(self, move other: Self) {}
+    pub init(self, values: []T) {}
+
+    pub fn [](mut self, index: Size) -> &T {}
+
+    pub fn size(self) -> Size {}
+
+    pub fn sort(self) requires Sortable<T> {}
+}
+
+class Array<N: Size, T> {
+    data: [N]T;
+}
+
+specialize class List<Bool>  {
+    data: ByteArray;
+
+    // ...
+}
+
+specialize fn Foo<Bar>::baz() {
+    // ...
+}
+
+specialize fn foo<Bar>() {
+    // ...
+}
+
+class Dict<K, V> requires Sortable<K> {
+    // ...
+}
+
+class File {
+    // ...
+}
+
+extend File {
+    pub fn write(self, document: &DomDocument) {}
+}
+
+extend List<String> {
+    fn join(self) -> String {
+        // ...
+    }
+}
+
+extend<T> List<T> {
+    fn to_my_container(self) -> MyContainer {
+        // ...
+    }
+}
+
+extend<T> *T {
+    fn is_null(self) -> Bool {
+        return self == null;
+    }
+}
