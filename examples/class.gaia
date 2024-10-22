@@ -1,0 +1,17 @@
+class Parallelogram {
+
+    // Properties of class
+    base: f64;
+    height: f64;
+
+    // Initializer
+    pub fn new(mut self, base: f64, height: f64) {
+        self.base = base;
+        self.height = height;
+    }
+
+    // Method to calculate the area of the Parallelogram
+    pub fn calculateParallelogramArea(self) -> f64 {
+        return base * height;
+    }
+}
